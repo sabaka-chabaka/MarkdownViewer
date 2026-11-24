@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="clr-namespace:Markdown.Avalonia;assembly=Markdown.Avalonia"
+        xmlns:ctxt="clr-namespace:ColorTextBlock.Avalonia;assembly=ColorTextBlock.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MarkdownViewer.MainWindow"
+        Title="MarkdownViewer"
+        TransparencyLevelHint="Mica, AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        Icon="avares://MyApp/Assets/markdown.ico"
+        ExtendClientAreaTitleBarHeightHint="-1">
+        <Window.Styles>
+                <Style Selector="md|MarkdownScrollViewer">
+                        <Setter Property="Padding" Value="32,24" />
+                </Style>
+
+                <Style Selector="ctxt|CCode">
+                        <Setter Property="Background" Value="#2D2D30" />
+                        <Setter Property="Foreground" Value="#CE9178" />
+                        <Setter Property="CornerRadius" Value="4" />
+                </Style>
+
+                <Style Selector="md|MarkdownScrollViewer Border.CodeBlock">
+                        <Setter Property="Background" Value="#252526" />
+                        <Setter Property="BorderBrush" Value="#3E3E42" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="CornerRadius" Value="6" />
+                        <Setter Property="Padding" Value="12,10" />
+                        <Setter Property="Margin" Value="0,8" />
+                </Style>
+        </Window.Styles>
+        <md:MarkdownScrollViewer x:Name="Viewer" />
+</Window>
